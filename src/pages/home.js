@@ -63,7 +63,7 @@ const Home = () => {
     return (
         <div>
             <div style={textConainer}>
-        <h1 style={title}>EV remote charge unlocking </h1>
+        <h1 style={title}>EV remote charge unlocking!</h1>
         <p style={description}>No more texting to neighbours, 
 or waiting for the owner to come back just scan the QR code and unlock the chargerBest way to share your EV charger automaticly. </p>
        </div>
