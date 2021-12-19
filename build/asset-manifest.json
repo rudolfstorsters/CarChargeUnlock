@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/static/js/main.7a6dd974.chunk.js",
+    "main.js.map": "/static/js/main.7a6dd974.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6d7d0eba.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6d7d0eba.js.map",
+    "static/js/2.e3a96535.chunk.js": "/static/js/2.e3a96535.chunk.js",
+    "static/js/2.e3a96535.chunk.js.map": "/static/js/2.e3a96535.chunk.js.map",
+    "static/js/3.01fb1b2b.chunk.js": "/static/js/3.01fb1b2b.chunk.js",
+    "static/js/3.01fb1b2b.chunk.js.map": "/static/js/3.01fb1b2b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.e3a96535.chunk.js.LICENSE.txt": "/static/js/2.e3a96535.chunk.js.LICENSE.txt",
+    "static/media/trafalgar-header illustration 1.5358e529.png": "/static/media/trafalgar-header illustration 1.5358e529.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6d7d0eba.js",
+    "static/js/2.e3a96535.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.7a6dd974.chunk.js"
+  ]
+}
