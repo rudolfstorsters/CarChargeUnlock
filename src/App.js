@@ -7,6 +7,8 @@ import Login from './pages/login';
 import Scan from './pages/scan';
 import About from './pages/about';
 
+import './App.css';
+
 const App = () => {
   return (
 
