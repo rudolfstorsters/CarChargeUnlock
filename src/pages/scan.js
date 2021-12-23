@@ -1,34 +1,34 @@
 
-import React, { useEffect, useRef } from "react";
-
-const Scan = () => {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    getVideo();
-  }, [videoRef]);
-
-  const getVideo = () => {
-    navigator.mediaDevices
-      .getUserMedia({ video: { width: 300 } })
-      .then(stream => {
-        let video = videoRef.current;
-        video.srcObject = stream;
-        video.play();
+import React, { Component } from 'react'
+import QrReader from 'react-qr-reader'
+ 
+class Scan extends Component {
+  state = {
+    result: 'No result'
+  }
+ 
+  handleScan = data => {
+    if (data) {
+      this.setState({
+        result: data
       })
-      .catch(err => {
-        console.error("error:", err);
-      });
-  };
-
-  return (
-    <div>
+    }
+  }
+  handleError = err => {
+    console.error(err)
+  }
+  render() {
+    return (
       <div>
-        <button>Take a photo</button>
-        <video ref={videoRef} />
+        <QrReader
+          delay={300}
+          onError={this.handleError}
+          onScan={this.handleScan}
+          style={{ width: '100%' }}
+        />
+        <p>{this.state.result}</p>
       </div>
-    </div>
-  );
-};
-
-export default Scan;
+    )
+  }
+}
+ 
