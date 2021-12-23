@@ -31,4 +31,4 @@ class Scan extends Component {
     )
   }
 }
- 
+ export default Scan
