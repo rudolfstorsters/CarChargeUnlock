@@ -49,7 +49,7 @@ const textConainer = {
     height: '260px',
     textAlign: 'center',
     padding: '11px 0px ',
-    fontFamily: 'Mulish sans-serif',
+   
     position: 'relative',
 }
 const title = {
@@ -57,7 +57,7 @@ const title = {
     display: 'contents',
     lineHeight: '33.5px',
     fontWeight: '700',
-    fontFamily: 'Mulish',
+   
     textAlign: 'left',
     padding: '11px 0px',
     fontSize: '35px',
@@ -65,7 +65,7 @@ const title = {
 }
 const description = {
 
-    fontFamily: 'Mulish',
+    
     color: '#7D7987',
     padding: ' 11px 8px',
     lineHeight: '32px',
@@ -104,6 +104,7 @@ export const ResText = styled(ResponsiveText)`
     justify-items: center;
     @media (min-width: 600px) {
         text-align: left;
+        max-width: 500px;
     }
 `;
 

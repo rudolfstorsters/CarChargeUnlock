@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Signup from './pages/signup';
 import Home from './pages/home';
@@ -7,7 +7,7 @@ import Login from './pages/login';
 import Scan from './pages/scan';
 import About from './pages/about';
 
-import './App.css';
+
 
 const App = () => {
   return (
@@ -15,13 +15,12 @@ const App = () => {
 
     <Router>
 
-<Navbar>
-  
-</Navbar>
+      <Navbar>
 
-    
+      </Navbar>
+
       <Routes>
-      <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />

@@ -1,18 +1,34 @@
-import React from 'react'
 
-function Scan() {
-    return (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh'
-            }}
-        >
-           <h1>Scan me</h1> 
-        </div>
-    );
+import React, { useEffect, useRef } from "react";
+
+const Scan = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    getVideo();
+  }, [videoRef]);
+
+  const getVideo = () => {
+    navigator.mediaDevices
+      .getUserMedia({ video: { width: 300 } })
+      .then(stream => {
+        let video = videoRef.current;
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(err => {
+        console.error("error:", err);
+      });
+  };
+
+  return (
+    <div>
+      <div>
+        <button>Take a photo</button>
+        <video ref={videoRef} />
+      </div>
+    </div>
+  );
 };
 
 export default Scan;

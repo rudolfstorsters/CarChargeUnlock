@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { NavBtnLink, NavLink } from "../components/Navbar/NavbarElements";
 import { NavLink as Link } from "react-router-dom";
 
 const appStyle = {
