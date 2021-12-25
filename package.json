@@ -4,7 +4,7 @@
   "description": "A full MERN stack boilerplate",
   "main": "server/index.js",
   "scripts": {
-    "build": "./scripts/build-prd.sh",
+    "build-prod": "./scripts/build-prd.sh",
     "build:prd": "./scripts/build-prd.sh",
     "build:dev": "./scripts/build-dev.sh",
     "start": "nodemon server/index.js",
@@ -15,7 +15,8 @@
     "test:verbose": "./scripts/test-verbose.sh",
     "test:coverage": "./scripts/test-coverage.sh",
     "test:watch-client": "./scripts/test-watch-client.sh",
-    "test:watch-server": "./scripts/test-watch-server.sh"
+    "test:watch-server": "./scripts/test-watch-server.sh",
+    "deploy": "yarn build-prod & git push heroku HEAD:master -f"
   },
   "repository": {
     "type": "git",
