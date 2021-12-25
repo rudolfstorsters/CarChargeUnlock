@@ -1,76 +1,58 @@
-.navbar {
-  background-color: $mern-primary;
+.navBar {
+  background: #fff;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  z-index: 12;
 
-  &.has-shadow {
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.3);
+  @media (min-width: 600px) {
+    top: 0px;
+    padding: 30px;
   }
 
-  .navbar-brand-right {
-    margin-left: auto;
+  .navBtn {
     display: flex;
+    align-items: center;
   }
 
-  .navbar-end .navbar-item:hover {
-    background: $mern-hover;
+  .homeButton {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #333;
+    font-size: 2rem;
+    text-decoration: none;
   }
+
+  .authButton {
+    border-radius: 4px;
+    background: #fff;
+    padding: 10px 22px;
+    color: #0069E0;
+    outline: none;
+    border: 1px solid #0069E0;
+    border-radius: 62px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-right: 0px;
+  }
+
+  .authButton:hover {
+    transition: all 0.2s ease-in-out;
+    background: #0078FF;
+    color: #fff;
+  }
+
+  .navMenu { 
+    display: flex;
+    align-items: center;
+  }
+
 
   .navbar-item {
     min-height: 44px;
   }
 
-  .navbar-item.is-hoverable:hover {
-    background-color: $mern-hover;
-  }
-
-  .navbar-item .dropdown-caret {
-    border-top-color: $lightest-grey;
-  }
-
-  .navbar-item:not(.button).is-tab:hover {
-    border-bottom: 1px solid $white;
-  }
-
-  .navbar-item:not(.button).is-tab.is-active {
-    border-bottom: 3px solid $white;
-    color: $white;
-  }
-
-  .navbar-item:focus-within {
-    background-color: inherit;
-    color: inherit;
-  }
-
-  .navbar-item img {
-    max-height: none;
-  }
-
-  .profile-img {
-    height: 32px;
-    width: 32px;
-    border: 1px solid $mern-hover;
-    border-radius: 3px;
-    max-height: none;
-  }
-
-  .button {
-    font-weight: $weight-semibold;
-  }
-
-  .title {
-    color: $white;
-    font-weight: $weight-semibold;
-  }
-
-  .logo {
-    color: $white;
-    font: initial;
-    font-size: 1.5rem;
-    font-weight: 800;
-  }
-
-  .dropdown {
-    .title {
-      color: $black;
-    }
-  }
 }

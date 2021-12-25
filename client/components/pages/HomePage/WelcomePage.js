@@ -7,22 +7,22 @@ import Section from 'react-bulma-companion/lib/Section';
 import Container from 'react-bulma-companion/lib/Container';
 import Title from 'react-bulma-companion/lib/Title';
 
-export default function HomePage() {
+export default function WelcomePage() {
   const dispatch = useDispatch();
   const { user } = useSelector(R.pick(['user']));
 
   useEffect(() => {
-    if (R.isEmpty(user)) {
-      dispatch(push('/login'));
+    if (!R.isEmpty(user)) {
+      dispatch(push('/home'));
     }
   }, []);
 
   return (
-    <div className="home-page page">
+    <div className="welcome-page page">
       <Section>
         <Container>
           <Title size="1">
-            Home Page
+            Welcome Page!
           </Title>
         </Container>
       </Section>

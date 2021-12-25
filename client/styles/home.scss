@@ -1,3 +1,95 @@
 .home-page {
-  text-align: center;
+  .responsiveText {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 332px;
+    // min-width: 320px;
+    text-align: center;
+    padding: 11px 0px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .homeTitle {
+    display: block;
+    line-height: 33.5px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    padding: 11px 0px;
+    font-size: 35px;
+  }
+
+  @media (min-width: 600px) {
+    .responsiveText {
+      text-align: left;
+      max-width: 500px;
+      align-items: flex-start;
+      justify-items: flex-start;
+    }
+
+    .homeTitle {
+      text-align: left;
+    }
+  }
+
+  .homeNavBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow .3s;
+    width: 230px;
+    height: 56px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 3px solid #0078FF;
+    font-size: 18px;
+    border-radius: 56px;
+    font-weight: 700;
+    background: #fff;
+    justify-content: center;
+    vertical-align: middle;
+    color: #0069E0;
+    text-align: center;
+    outline: none;
+    border: 1, 5px solid #0069E0;
+    border-radius: 62px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-right: 24px;
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      background: #0078FF;
+      color: #fff;
+    }
+  }
+
+  .backgroundImage {
+    background-image: url('/client/assets/images/carMobileBg.png');
+    width: 100vw;
+    overflow: hidden;
+    max-width: 693px;
+    height: 600px;
+    margin-top: -250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    align-self: flex-end;
+    z-index: -1;
+
+    @media (min-width: 600px) {
+      background-image: url('/client/assets/images/carDesktopBg.png');
+      position: relative;
+      margin-top: 30px;
+    }
+
+    @media (min-width: 1400px) {
+      top: 0px;
+    }
+  }
 }
