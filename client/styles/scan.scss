@@ -1,0 +1,17 @@
+.scanPage{
+    .scannerMessage {
+        display: none;
+
+        @media (min-width: $desktop-wight) {
+            display: flex;
+        }
+    }
+
+    .scanner {
+        @media (min-width: $desktop-wight) {
+            display: none;
+        }
+
+    }
+
+}
