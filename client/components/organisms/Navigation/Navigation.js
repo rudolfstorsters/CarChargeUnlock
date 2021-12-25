@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import R from 'ramda';
-
 import Logo from './home-image.png';
 
 export default function Navigation({ pathname }) {
@@ -39,7 +38,6 @@ export default function Navigation({ pathname }) {
           <img src={Logo} alt="Logo" />
           </Link>
           <div className="navMenu">
-              
               <div className="navBtn">
                   <Link className="authButton" to="/login">LOGIN</Link>                
               </div>

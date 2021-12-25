@@ -1,12 +1,11 @@
 .navBar {
-  background: #fff;
+  background: $white;
   height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  z-index: 12;
-
+  
   @media (min-width: 600px) {
     top: 0px;
     padding: 30px;
@@ -27,11 +26,11 @@
 
   .authButton {
     border-radius: 4px;
-    background: #fff;
+    background: $white;
     padding: 10px 22px;
-    color: #0069E0;
+    color: $primary-color;
     outline: none;
-    border: 1px solid #0069E0;
+    border: 1px solid $primary-color;
     border-radius: 62px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -42,7 +41,7 @@
   .authButton:hover {
     transition: all 0.2s ease-in-out;
     background: #0078FF;
-    color: #fff;
+    color: $white;
   }
 
   .navMenu { 

@@ -1,4 +1,4 @@
-.home-page {
+.homePage {
 
   .body {
     min-width: 320px;
@@ -58,13 +58,12 @@
     justify-content: center;
     user-select: none;
   }
-  
+
   .responsiveText {
     display: flex;
     flex-direction: column;
     margin: auto;
     max-width: 332px;
-    // min-width: 320px;
     text-align: center;
     padding: 11px 0px;
     display: flex;
@@ -83,7 +82,7 @@
     font-size: 35px;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: $desktop-wight) {
     .responsiveText {
       text-align: left;
       max-width: 500px;
@@ -105,17 +104,16 @@
     height: 56px;
     margin: 8px;
     border-radius: 10px;
-    border: 3px solid #0078FF;
     font-size: 18px;
     border-radius: 56px;
     font-weight: 700;
-    background: #fff;
+    background: $white;
     justify-content: center;
     vertical-align: middle;
-    color: #0069E0;
+    color: $primary-color;
     text-align: center;
     outline: none;
-    border: 1, 5px solid #0069E0;
+    border: 1.5px solid $primary-color;
     border-radius: 62px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -125,8 +123,8 @@
 
     &:hover {
       transition: all 0.2s ease-in-out;
-      background: #0078FF;
-      color: #fff;
+      background: $primary-color;
+      color: $white;
     }
   }
 
@@ -143,7 +141,7 @@
     align-self: flex-end;
     z-index: -1;
 
-    @media (min-width: 600px) {
+    @media (min-width: $desktop-wight) {
       background-image: url('/client/assets/images/carDesktopBg.png');
       position: relative;
       margin-top: 30px;
