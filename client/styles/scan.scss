@@ -1,17 +1,40 @@
 .scanPage{
+    height: 100%;
+    display: block;
+    
+    .description {
+        color: #7D7987;
+        padding: 11px 0px;
+        line-height: 32px;
+        margin: 5.5px 0px;
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+        display: block;
+        height: 200px;
+      }
     .scannerMessage {
         display: none;
 
         @media (min-width: $desktop-wight) {
-            display: flex;
+            margin-top: 15%;
+            display: block;
         }
     }
 
     .scanner {
+        margin-top: -44px;
         @media (min-width: $desktop-wight) {
             display: none;
         }
-
+    }
+    .scannerText {
+        text-align: center;
+        color: #7D7987;
+        line-height: 32px;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 10px;
     }
 
 }

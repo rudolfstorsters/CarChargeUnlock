@@ -29,10 +29,8 @@ class ScanPage extends Component {
         return (
             <div className="scanPage">
                 {this.state.isDesktop ?
-                    <div className="scannerMessage">
-                        If your using a phone please turn to portrait.
-                        If you are on a desktop then please
-                        visit this page on your mobile device.
+                    <div className="scannerMessage description">
+                        This page can only be viewed on mobile devices held in portrait position.
                     </div>
                     :
                     <div className="scanner">
@@ -43,6 +41,9 @@ class ScanPage extends Component {
                             onScan={this.handleScan}
                             style={{ width: '100%' }}
                         />
+                        <p className="scannerText">
+                            Scan the QR code for the car you want to unlock the charge port
+                        </p>
                     </div>
                 }
             </div>
