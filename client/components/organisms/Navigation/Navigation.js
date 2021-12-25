@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -33,17 +33,17 @@ export default function Navigation({ pathname }) {
 
   return (
     <>
-         <div className="navBar">
-          <Link to="/">
+      <div className="navBar">
+        <Link to="/">
           <img src={Logo} alt="Logo" />
-          </Link>
-          <div className="navMenu">
-              <div className="navBtn">
-                  <Link className="authButton" to="/login">LOGIN</Link>                
-              </div>
-          </div> 
-         </div> 
-      </>
+        </Link>
+        <div className="navMenu">
+          <div className="navBtn">
+            <Link className="authButton" to="/login">LOGIN</Link>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

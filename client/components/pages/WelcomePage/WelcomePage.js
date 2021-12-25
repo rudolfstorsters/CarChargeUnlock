@@ -5,7 +5,7 @@ export default class WelcomePage extends React.Component {
 
   render() {
     return (
-      <div className="homePage body" >
+      <div className="homePage body">
         <div className="wrapContainer">
           <div className="innerWrapContainer">
             <div className="textConainer">
