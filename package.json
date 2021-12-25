@@ -15,7 +15,8 @@
     "test:verbose": "./scripts/test-verbose.sh",
     "test:coverage": "./scripts/test-coverage.sh",
     "test:watch-client": "./scripts/test-watch-client.sh",
-    "test:watch-server": "./scripts/test-watch-server.sh"
+    "test:watch-server": "./scripts/test-watch-server.sh",
+    "deploy": "git push heroku HEAD:master -f"
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,8 @@
   ],
   "homepage": "https://github.com/djizco/mern-boilerplate#readme",
   "engines": {
-    "node": ">=12.0.0"
+    
+    "yarn": "1.x"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -89,17 +91,29 @@
     "uuid": "^8.3.2",
     "webpack": "^5.53.0",
     "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.8.0"
-  },
-  "devDependencies": {
+    "webpack-cli": "^4.8.0",
+    "mini-css-extract-plugin": "^2.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.7",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
     "babel-core": "^7.0.0-0",
-    "babel-loader": "^8.2.2",
     "babel-plugin-ramda": "^2.0.0",
-    "css-loader": "^6.3.0",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "nodemon": "^2.0.12",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0"
+  },
+  "devDependencies": {
+    "jest": "^27.2.1",
+    "jest-environment-jsdom": "^27.2.0",
+    "supertest": "^6.1.6",
+    "superagent": "^6.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -107,18 +121,6 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "html-webpack-plugin": "^5.3.2",
-    "jest": "^27.2.1",
-    "jest-environment-jsdom": "^27.2.0",
-    "less": "^4.1.1",
-    "less-loader": "^10.0.1",
-    "mini-css-extract-plugin": "^2.3.0",
-    "nodemon": "^2.0.12",
-    "sass": "^1.42.1",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^3.3.0",
-    "superagent": "^6.1.0",
-    "supertest": "^6.1.6"
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

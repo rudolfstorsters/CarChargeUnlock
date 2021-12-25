@@ -1,31 +1,41 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { push } from 'connected-react-router';
-import R from 'ramda';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Section from 'react-bulma-companion/lib/Section';
-import Container from 'react-bulma-companion/lib/Container';
-import Title from 'react-bulma-companion/lib/Title';
+export default class WelcomePage extends React.Component {
 
-export default function WelcomePage() {
-  const dispatch = useDispatch();
-  const { user } = useSelector(R.pick(['user']));
-
-  useEffect(() => {
-    if (!R.isEmpty(user)) {
-      dispatch(push('/home'));
-    }
-  }, []);
-
-  return (
-    <div className="welcome-page page">
-      <Section>
-        <Container>
-          <Title size="1">
-            Welcome Page!
-          </Title>
-        </Container>
-      </Section>
-    </div>
-  );
+  render() {
+    return (
+      <div className="homePage body">
+        <div className="wrapContainer">
+          <div className="innerWrapContainer">
+            <div className="textConainer">
+              <div className="responsiveText">
+                <h1 className="homeTitle">EV remote charge unlocking</h1>
+                <div className="description">
+                  No more texting to neighbours,
+                  or waiting for the owner to come back
+                  just scan the QR code and unlock the
+                  chargerBest way to share your EV charger
+                  automaticly.
+                </div>
+              </div>
+            </div>
+            <div className="btnContainer">
+              <Link to="/Scan">
+                <div className="homeNavBtn">
+                  SCAN
+                </div>
+              </Link>
+              <Link to="/login">
+                <div className="homeNavBtn">
+                  MANAGE
+                </div>
+              </Link>
+            </div>
+          </div>
+          <div className="backgroundImage" />
+        </div>
+      </div>
+    );
+  }
 }

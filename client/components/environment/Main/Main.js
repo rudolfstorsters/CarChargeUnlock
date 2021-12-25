@@ -51,7 +51,6 @@ export default function Main({ location }) {
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
-      <Footer />
     </div>
   );
 }
