@@ -16,7 +16,7 @@
     "test:coverage": "./scripts/test-coverage.sh",
     "test:watch-client": "./scripts/test-watch-client.sh",
     "test:watch-server": "./scripts/test-watch-server.sh",
-    "deploy": "yarn build-prod & git push heroku HEAD:master -f"
+    "deploy": "git push heroku HEAD:master -f"
   },
   "repository": {
     "type": "git",
