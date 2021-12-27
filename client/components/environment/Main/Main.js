@@ -17,6 +17,7 @@ import LostPage from '_pages/LostPage';
 
 import Navigation from '_organisms/Navigation';
 import Footer from '_organisms/Footer';
+import ResultsPage from '../../pages/Results/ResultsPage';
 
 export default function Main({ location }) {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ export default function Main({ location }) {
           <Route path="/home" component={HomePage} />
           <Route path="/todo" component={TodoPage} />
           <Route path="/settings" component={SettingsPage} />
+          <Route path="/results" component={ResultsPage} />
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
