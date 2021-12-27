@@ -23,7 +23,7 @@ class ScanPage extends Component {
     reportWindowSize = data => {
         this.setState({
             isDesktop: document.body.clientWidth > 600
-        })
+        });
     }
     render() {
         return (
