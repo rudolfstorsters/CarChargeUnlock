@@ -33,6 +33,7 @@ class ScanPage extends Component {
                         This page can only be viewed on mobile devices held in portrait position.
                     </div>
                     :
+                    <div className="scannerContainer">
                     <div className="scanner">
                         <QrReader
                             showViewFinder={false}
@@ -41,6 +42,8 @@ class ScanPage extends Component {
                             onScan={this.handleScan}
                             style={{ width: '100%' }}
                         />
+                        <div className="scannerFrame"></div>
+                        </div>
                         <p className="scannerText">
                             Scan the QR code for the car you want to unlock the charge port
                         </p>
