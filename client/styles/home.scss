@@ -82,7 +82,7 @@
     font-size: 35px;
   }
 
-  @media (min-width: $desktop-wight) {
+  @media (min-width: $desktop-width) {
     .responsiveText {
       text-align: left;
       max-width: 500px;
@@ -141,7 +141,7 @@
     align-self: flex-end;
     z-index: -1;
 
-    @media (min-width: $desktop-wight) {
+    @media (min-width: $desktop-width) {
       background-image: url('/client/assets/images/carDesktopBg.png');
       position: relative;
       margin-top: 30px;

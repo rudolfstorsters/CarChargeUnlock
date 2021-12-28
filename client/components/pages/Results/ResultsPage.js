@@ -11,6 +11,7 @@ class ResultsPage extends Component {
                         </div>
                     </div>
                     <p>Success</p>
+                    <p className="description">Charger port has been unlocked</p>
                 </div>
 
                 <div className="backgroundImage"></div>
