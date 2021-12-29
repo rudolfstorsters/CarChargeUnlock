@@ -15,9 +15,11 @@ import TodoPage from '_pages/TodoPage';
 import SettingsPage from '_pages/SettingsPage';
 import LostPage from '_pages/LostPage';
 import ScanPage from '_pages/ScanPage';
+import AuthPage from '_pages/AuthPage';
 
 import Navigation from '_organisms/Navigation';
 import Footer from '_organisms/Footer';
+
 
 export default function Main({ location }) {
   const dispatch = useDispatch();
@@ -50,6 +52,7 @@ export default function Main({ location }) {
           <Route path="/todo" component={TodoPage} />
           <Route path="/settings" component={SettingsPage} />
           <Route path="/scan" component={ScanPage} />
+          <Route path="/auth" component={AuthPage} />
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
