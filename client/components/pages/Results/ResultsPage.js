@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 
 export const SUCCESS = 'success';
-export const FAIL = 'fail'
+export const FAIL = 'fail';
 
 class ResultsPage extends Component {
 
     render() {
-       const status = this.props?.match?.params?.status
+        const status = this.props?.match?.params?.status
         return (
             <div className="resultsPage">
                 {status !== SUCCESS && status !== FAIL ? <Redirect path={"/"} /> : null}
@@ -33,7 +33,6 @@ class ResultsPage extends Component {
                             <p>FAILED</p>
                             <p className="description">Unable to Unlock</p>
                         </div>
-
                         <div className="backgroundImage"></div>
                     </>
                 }
