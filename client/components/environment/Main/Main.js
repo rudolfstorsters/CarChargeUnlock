@@ -16,9 +16,9 @@ import SettingsPage from '_pages/SettingsPage';
 import LostPage from '_pages/LostPage';
 import ScanPage from '_pages/ScanPage';
 import AuthPage from '_pages/AuthPage';
+import ResultsPage from '_pages/Results/ResultsPage';
 
 import Navigation from '_organisms/Navigation';
-import Footer from '_organisms/Footer';
 
 
 export default function Main({ location }) {
@@ -51,6 +51,7 @@ export default function Main({ location }) {
           <Route path="/home" component={HomePage} />
           <Route path="/todo" component={TodoPage} />
           <Route path="/settings" component={SettingsPage} />
+          <Route path="/results/:status" component={ResultsPage} />
           <Route path="/scan" component={ScanPage} />
           <Route path="/auth" component={AuthPage} />
           <Route path="*" component={LostPage} />
