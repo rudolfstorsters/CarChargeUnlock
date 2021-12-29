@@ -17,7 +17,7 @@
     .scannerMessage {
         display: none;
 
-        @media (min-width: $desktop-wight) {
+        @media (min-width: $desktop-width) {
             margin-top: 15%;
             display: block;
         }
@@ -27,7 +27,7 @@
         margin-top: -44px;
         position: relative;
 
-        @media (min-width: $desktop-wight) {
+        @media (min-width: $desktop-width) {
             display: none;
         }
     }
