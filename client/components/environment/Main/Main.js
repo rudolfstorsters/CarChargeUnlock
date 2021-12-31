@@ -16,9 +16,12 @@ import SettingsPage from '_pages/SettingsPage';
 import LostPage from '_pages/LostPage';
 import ScanPage from '_pages/ScanPage';
 import AuthPage from '_pages/AuthPage';
-import ResultsPage from '_pages/Results/ResultsPage';
+import ResultsPage from '_pages/Results';
+import TermsPage from '_pages/TermsPage';
+import PrivacyPage from '_pages/PrivacyPage';
 
 import Navigation from '_organisms/Navigation';
+
 
 
 export default function Main({ location }) {
@@ -53,7 +56,10 @@ export default function Main({ location }) {
           <Route path="/settings" component={SettingsPage} />
           <Route path="/results/:status" component={ResultsPage} />
           <Route path="/scan" component={ScanPage} />
+          <Route path="/auth/:type" component={AuthPage} />
           <Route path="/auth" component={AuthPage} />
+          <Route path="/terms" component={TermsPage} />
+          <Route path="/privacy" component={PrivacyPage} />
           <Route path="*" component={LostPage} />
         </Switch>
       </div>

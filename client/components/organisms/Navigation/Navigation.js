@@ -39,7 +39,7 @@ export default function Navigation({ pathname }) {
         </Link>
         <div className="navMenu">
           <div className="navBtn">
-            <Link className="authButton" to="/login">LOGIN</Link>
+            <Link className="authButton" to="/auth/login">LOGIN</Link>
           </div>
         </div>
       </div>

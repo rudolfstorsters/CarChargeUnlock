@@ -1,9 +1,9 @@
 .AuthPage {
     width: 100vw;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: relative;
 
     .description {
         color: $text-color;
@@ -32,10 +32,9 @@
         align-items: center;
         flex-direction: column;
         margin: auto 19.5px;
-
     }
 
-    input {
+    .inputField {
         border-radius: 62px;
         min-width: 320px;
         height: 42px;
@@ -47,14 +46,37 @@
         border: 1px solid $primary-color;
     }
 
-    button{
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: box-shadow .3s;
         width: 230px;
         height: 56px;
-        border-radius: 55px;
-        background-color: $primary-color ;
-        color: $white;
+        margin: 8px;
+        border-radius: 10px;
+        font-size: 18px;
+        border-radius: 56px;
         font-weight: 700;
-        font-size: 14px;
+        background: $white;
+        justify-content: center;
+        vertical-align: middle;
+        color: $primary-color;
+        text-align: center;
+        outline: none;
+        border: 1.5px solid $primary-color;
+        border-radius: 62px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        margin-right: 24px;
+        user-select: none;
+
+        &:hover {
+            transition: all 0.2s ease-in-out;
+            background: $primary-color;
+            color: $white;
+        }
     }
 
     .backgroundImage {
@@ -66,9 +88,40 @@
         background-repeat: no-repeat;
         object-fit: contain;
         align-self: center;
-        display: flex;
+        display: flex;  
         z-index: -1;
         position: absolute;
-        top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .checkboxField{
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+    }
+
+    .dispNone {
+        display: none;
+    }
+
+    .hyperlink{
+        font-size: 16px;
+    }
+
+    @media (min-width: 900px) {
+        .backgroundImage {
+            background-image: url('/client/assets/images/plugCarDesk.svg');
+            background-size: contain;
+            width: 100%;
+            overflow: hidden;
+            height: 1000px;
+            background-repeat: no-repeat;
+            display: flex;
+            z-index: -1;
+            position: absolute;
+            bottom: 0px;
+            top: 5px;
+        }
     }
 }
