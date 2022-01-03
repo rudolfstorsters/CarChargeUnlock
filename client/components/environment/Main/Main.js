@@ -57,9 +57,11 @@ export default function Main({ location }) {
           <Route path="/results/:status" component={ResultsPage} />
           <Route path="/scan" component={ScanPage} />
           <Route path="/auth/:type" component={AuthPage} />
+          <Route path="/auth/:type/:token" component={AuthPage} />
           <Route path="/auth" component={AuthPage} />
           <Route path="/terms" component={TermsPage} />
           <Route path="/privacy" component={PrivacyPage} />
+          {/*<Route path="/forgot" component={ForgotPage} />*/}
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
