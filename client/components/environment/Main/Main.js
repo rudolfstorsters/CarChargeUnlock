@@ -22,8 +22,6 @@ import PrivacyPage from '_pages/PrivacyPage';
 
 import Navigation from '_organisms/Navigation';
 
-
-
 export default function Main({ location }) {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
@@ -61,7 +59,6 @@ export default function Main({ location }) {
           <Route path="/auth" component={AuthPage} />
           <Route path="/terms" component={TermsPage} />
           <Route path="/privacy" component={PrivacyPage} />
-          {/*<Route path="/forgot" component={ForgotPage} />*/}
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
