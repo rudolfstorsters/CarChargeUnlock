@@ -9,21 +9,23 @@ export const RESET = 'reset';
 const ResetPage = ({ isActive }) => isActive && (
     <>
         <form>
-            <p>Reset Password</p>
+            <p className="title" >Reset Password</p>
             <input type="Password" placeholder="Password" className="inputField" />
             <input type="Password" placeholder="Re-Enter Password" className="inputField" />
             <button type="submit">Reset</button>
         </form>
+        <div className="backgroundImage" />
     </>
 )
 
 const ForgotPage = ({ isActive }) => isActive && (
     <>
         <form>
-            <p>Forgot Password</p>
+            <p className="title">Forgot Password</p>
             <input type="email" placeholder="Email" className="inputField" />
             <button type="submit">Submit</button>
         </form>
+        <div className="backgroundImage" />
     </>
 )
 
