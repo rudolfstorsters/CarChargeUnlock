@@ -1,0 +1,42 @@
+.TermsPage{
+    min-width: 290px;
+    justify-content: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 100%;
+
+    .description {
+        color: $text-color;
+        padding: 11px 0px;
+        line-height: 32px;
+        margin: 5.5px auto;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: justify;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    .title {
+        text-align: center;
+        color: $black;
+        line-height: 32px;
+        font-weight: 700;
+        font-size: 35px;
+        padding: 10px;
+    }
+    
+    .checkbox {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+    }
+
+    @media (min-width: 900px) {
+        .description {
+            max-width: 800px;
+            text-align: justify;
+        }
+    }
+}

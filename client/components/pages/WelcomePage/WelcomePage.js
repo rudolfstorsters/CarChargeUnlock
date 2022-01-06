@@ -26,7 +26,7 @@ export default class WelcomePage extends React.Component {
                   SCAN
                 </div>
               </Link>
-              <Link to="/login">
+              <Link to="auth/login">
                 <div className="homeNavBtn">
                   MANAGE
                 </div>
