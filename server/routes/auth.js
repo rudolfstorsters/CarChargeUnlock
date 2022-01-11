@@ -1,7 +1,7 @@
 const express = require('express');
 const passport = require('passport');
+const bcrypt = require('bcryptjs');
 const { User, Recovery } = require('../database/schemas');
-
 const router = express.Router();
 
 module.exports = router;
@@ -83,7 +83,7 @@ router.post('/forgot', (req, res) => {
       return;
     }
     if (user) {
-      const newRecovery = Recovery({email});
+      const newRecovery = Recovery({ email });
 
       newRecovery.save((err, savedRecovery) => {
         if (err) {
@@ -107,20 +107,15 @@ function sendRecoveryEmail(id, email, protocol) {
   // Configure API key authorization: api-key
   var apiKey = defaultClient.authentications['api-key'];
   apiKey.apiKey = process.env.MAIL_API_KEY;
-
   var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
   var os = require("os");
   var hostname = os.hostname();
-
 
   var sendSmtpEmail = {
     to: [{ email }],
     sender: { email: "no-reply@a4d.tech" },
     subject: "Recovery",
-    htmlContent: protocol + "://" + (process.env.HOST || hostname) + "/auth/reset/"  + id
-
-
-    //
+    htmlContent: protocol + "://" + (process.env.HOST || hostname) + "/auth/reset/" + id
   }
 
   apiInstance.sendTransacEmail(sendSmtpEmail).then(function (data) {
@@ -128,7 +123,49 @@ function sendRecoveryEmail(id, email, protocol) {
   }, function (error) {
     console.error(error);
   });
-
-
 }
 
+function hashPassword(password) {
+  return new Promise((resolve, reject) => {
+    bcrypt.genSalt(10, (err1, salt) => {
+      if (err1) { reject(err1); }
+      bcrypt.hash(password, salt, (err2, hash) => {
+        if (err2) { reject(err2); }
+        password = hash;
+        resolve(hash);
+      });
+    });
+  });
+}
+
+router.post('/reset', (req, res) => {
+
+  if (!req.body.id) {
+    res.status(404).send({ message: 'Invalid reset URL!', err });
+  }
+  Recovery.findById(req.body.id, (err, recoveryEntry) => {
+    if (err) {
+      res.status(404).send({ message: 'Invalid reset URL!', err });
+      return;
+    }
+    if (recoveryEntry.expires_at < Date.now()) {
+      res.status(410).send({ message: 'Link has expired!' })
+
+    } else if (recoveryEntry) {
+      User.findOne({ email: recoveryEntry.email }, (err, user) => {
+        if (err || !user) {
+          res.status(404).send({ message: 'Something went wrong!', err });
+        }
+        hashPassword(req.body.password).then((hashedPassword) => {
+          User.updateOne({ email: recoveryEntry.email }, {
+            $set: {
+              "password": hashedPassword,
+            }
+          }, () => {
+            res.status(200).send({ message: "Success" })
+          });
+        })
+      });
+    }
+  });
+});

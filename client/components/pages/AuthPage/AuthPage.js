@@ -21,7 +21,7 @@ export default class AuthPage extends Component {
             || pageType === RESET;
     }
 
-    getToken = () => this.props?.match?.params?.token;
+    getToken = () => this.props?.location.pathname.replace('/auth/reset/', '');
 
     render() {
         const pageType = this.props?.match?.params?.type;
@@ -30,12 +30,14 @@ export default class AuthPage extends Component {
             return (<Redirect to={"/auth/login"} />);
         }
 
+        console.warn(this.props);
+
         return (
             <div className="AuthPage ">
                 <LoginPage isActive={pageType == LOGIN} />
                 <RegisterPage isActive={pageType == REGISTER} />
                 <ForgotPage isActive={pageType == FORGOT} />
-                <ResetPage isActive={pageType == RESET} />
+                <ResetPage token={this.getToken()} isActive={pageType == RESET} />
             </div>
         );
     }
