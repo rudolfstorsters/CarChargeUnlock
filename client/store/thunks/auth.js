@@ -2,7 +2,7 @@ import { push } from 'connected-react-router';
 import { snakeToCamelCase } from 'json-style-converter/es5';
 import { store as RNC } from 'react-notifications-component';
 
-import { postRegister, postLogin, postLogout } from '_api/auth';
+import { postRegister, postLogin, postLogout, postForgot } from '_api/auth';
 import { login, logout } from '_actions/user';
 
 import { dispatchError } from '_utils/api';
@@ -43,7 +43,7 @@ export const attemptRegister = newUser => dispatch =>
           duration: 5000,
         },
       });
-
+      console.warn(newUser)
       return dispatch(attemptLogin(newUser));
     })
     .then(() => dispatch(push('/settings')))
@@ -70,3 +70,20 @@ export const attemptLogout = () => dispatch =>
       return data;
     })
     .catch(dispatchError(dispatch));
+
+    export const attemptForgot = user => dispatch =>
+    postForgot(user)
+    .then(data => {
+      RNC.addNotification({
+        title: 'Success!',
+        message: data?.message ?? "test",
+        type: 'success',
+        container: 'top-right',
+        animationIn: ['animated', 'fadeInRight'],
+        animationOut: ['animated', 'fadeOutRight'],
+        dismiss: {
+          duration: 5000,
+        },
+      });
+      return data;
+    })

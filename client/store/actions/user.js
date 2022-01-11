@@ -1,6 +1,7 @@
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
+export const UPDATE_FORGOT = 'UPDATE_FORGOT'
 
 export function login(user) {
   return {
@@ -18,6 +19,13 @@ export function logout() {
 export function updateUser(user) {
   return {
     type: UPDATE_USER,
+    user,
+  };
+}
+
+export function updateForgot(user){
+  return{
+    type: UPDATE_FORGOT,
     user,
   };
 }
