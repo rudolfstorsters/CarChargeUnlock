@@ -43,7 +43,6 @@ export const attemptRegister = newUser => dispatch =>
           duration: 5000,
         },
       });
-      console.warn(newUser)
       return dispatch(attemptLogin(newUser));
     })
     .then(() => dispatch(push('/settings')))

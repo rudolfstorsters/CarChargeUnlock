@@ -45,7 +45,6 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res, next) => {
   req.body.email = req.body.email.toLowerCase();
-  console.log(req.body);
   passport.authenticate('local', (err, user, info) => {
     if (err) {
       return next(err);

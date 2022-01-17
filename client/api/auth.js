@@ -18,8 +18,8 @@ export const postLogout = () =>
     .then(handleSuccess)
     .catch(handleError);
 
-  export const postForgot = (user) =>
-    request.post('/api/auth/forgot')
+export const postForgot = (user) =>
+  request.post('/api/auth/forgot')
     .send(user)
     .then(handleSuccess)
     .catch(handleError);

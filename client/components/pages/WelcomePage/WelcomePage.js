@@ -31,7 +31,7 @@ class WelcomePageComponent extends Component {
                   No more texting to neighbours,
                   or waiting for the owner to come back
                   just scan the QR code and unlock the
-                  chargerBest way to share your EV charger
+                  charger <br />Best way to share your EV charger
                   automaticly.
                 </div>
               </div>
@@ -63,5 +63,4 @@ const mapStateToProps = ({ user }) => ({
 const mapDispatchToProps = (dispatch) => ({
   pushRoute: (route) => dispatch(push(route))
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(WelcomePageComponent);
