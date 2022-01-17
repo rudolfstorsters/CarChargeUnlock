@@ -38,9 +38,9 @@ class RegisterPageComponent extends Component {
                 animationIn: ['animated', 'fadeInRight'],
                 animationOut: ['animated', 'fadeOutRight'],
                 dismiss: {
-                  duration: 5000,
+                    duration: 5000,
                 },
-              });
+            });
             return;
         }
         const newUser = {
@@ -48,7 +48,6 @@ class RegisterPageComponent extends Component {
             email,
             password,
         };
-        console.warn(this.props.attemptRegister);
 
         await this.props.attemptRegister(newUser);
         return;
@@ -67,14 +66,37 @@ class RegisterPageComponent extends Component {
                     title="Registration"
                     description={
                         `Please, make sure your personal inforamtion is correct.
-                This information will be protected by Privacy policy`
+                        This information will be protected by Privacy policy`
                     } />
                 <br />
                 <form onSubmit={this.register}>
-                    <input type="name" placeholder="Name" onChange={this.handleChange('name')} className="inputField" required />
-                    <input type="email" placeholder="Email" onChange={this.handleChange('email')} className="inputField" required />
-                    <input type="password" placeholder="Password" onChange={this.handleChange('password')} className="inputField" required />
-                    <input type="password" placeholder="Password" onChange={this.handleChange('passwordRepeat')} className="inputField" required />
+                    <input
+                        type="name"
+                        placeholder="Name"
+                        onChange={this.handleChange('name')}
+                        className="inputField"
+                        minLength="1"
+                        required />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        onChange={this.handleChange('email')}
+                        className="inputField"
+                        required />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        onChange={this.handleChange('password')}
+                        className="inputField"
+                        minLength="6"
+                        required />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        onChange={this.handleChange('passwordRepeat')}
+                        className="inputField"
+                        minLength="6"
+                        required />
                     <div className="checkboxField" >
                         <input className="checkboxField checkmark" type="checkbox" required />
                         <p> &nbsp;I agree to the&nbsp;

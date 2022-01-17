@@ -8,10 +8,7 @@ import R from 'ramda';
 import { attemptGetUser } from '_thunks/user';
 
 import WelcomePage from '_pages/WelcomePage';
-import LoginPage from '_pages/LoginPage';
-import RegisterPage from '_pages/RegisterPage';
-import HomePage from '_pages/HomePage';
-import TodoPage from '_pages/TodoPage';
+import DashboardPage from '_pages/DashboardPage';
 import SettingsPage from '_pages/SettingsPage';
 import LostPage from '_pages/LostPage';
 import ScanPage from '_pages/ScanPage';
@@ -47,10 +44,7 @@ export default function Main({ location }) {
       <div className="main">
         <Switch>
           <Route exact path="/" component={WelcomePage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/home" component={HomePage} />
-          <Route path="/todo" component={TodoPage} />
+          <Route path="/dashboard" component={DashboardPage} />
           <Route path="/settings" component={SettingsPage} />
           <Route path="/results/:status" component={ResultsPage} />
           <Route path="/scan" component={ScanPage} />

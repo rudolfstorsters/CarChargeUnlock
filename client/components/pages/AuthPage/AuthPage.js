@@ -30,8 +30,6 @@ export default class AuthPage extends Component {
             return (<Redirect to={"/auth/login"} />);
         }
 
-        console.warn(this.props);
-
         return (
             <div className="AuthPage ">
                 <LoginPage isActive={pageType == LOGIN} />

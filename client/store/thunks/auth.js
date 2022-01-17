@@ -24,7 +24,7 @@ export const attemptLogin = user => dispatch =>
         },
       });
 
-      dispatch(push('/home'));
+      dispatch(push('/dashboard'));
       return data;
     })
     .catch(dispatchError(dispatch));
@@ -66,7 +66,7 @@ export const attemptLogout = () => dispatch =>
         },
       });
 
-      dispatch(push('/login'));
+      dispatch(push('/auth/login'));
       return data;
     })
     .catch(dispatchError(dispatch));

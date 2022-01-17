@@ -1,52 +1,80 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
+
+import { push } from 'connected-react-router';
 import R from 'ramda';
 import Logo from './home-image.png';
 
-export default function Navigation({ pathname }) {
-  const { user } = useSelector(R.pick(['user']));
+class NavigationComponent extends React.Component {
 
-  const [auth, setAuth] = useState(!R.isEmpty(user));
-  const [open, setOpen] = useState(false);
+  /*export default function Navigation({ pathname }) {
+    const { user } = useSelector(R.pick(['user']));
+    const [auth, setAuth] = useState(!R.isEmpty(user));
 
-  useEffect(() => {
+
+    useEffect(() => {
     setAuth(!R.isEmpty(user));
   }, [user.username]);
 
-  const toggleDropdown = () => setOpen(!open);
+  componentDidUpdate(prevProps, nextProps) {
+    
+    const {
+      pushRoute,
+      user,
+    } = nextProps;
+    
+    if (R.isEmpty(user)) {
+      pushRoute("/login");
+    }
+  }
+  */
 
-  const closeDropdown = () => setOpen(false);
 
-  const isHome = (pathname.length === 5)
-    ? pathname === '/home'
-    : R.slice(0, 6, pathname) === '/home/';
 
-  const isTodo = (pathname.length === 5)
-    ? pathname === '/todo'
-    : R.slice(0, 6, pathname) === '/todo/';
+  render() {
 
-  const isSettings = (pathname.length === 9)
-    ? pathname === '/settings'
-    : R.slice(0, 10, pathname) === '/settings/';
+    const {
+      user,
+    } = this.props;
 
-  return (
-    <>
-      <div className="navBar">
-        <Link to="/">
-          <img src={Logo} alt="Logo" />
-        </Link>
-        <div className="navMenu">
-          <div className="navBtn">
-            <Link className="authButton" to="/auth/login">LOGIN</Link>
+    const auth = !R.isEmpty(user);
+
+    return (
+      <>
+        <div className="navBar">
+          {auth ?
+            <Link to={"/dashboard"}>
+              <img src={Logo} alt="Logo" />
+            </Link>
+            :
+            <Link to={"/"}>
+              <img src={Logo} alt="Logo" />
+            </Link>}
+          <div className="navMenu">
+            <div className="navBtn">
+              {auth ?
+                <Link className="authButton" to="/settings">ACCOUNT</Link>
+                :
+                <Link className="authButton" to="/auth/login">LOGIN</Link>}
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
+export default connect(
+  (state) => ({
+    user: state.user,
+  }),
+  (dispatch) => ({
+    pushRoute: (route) => dispatch(push(route)),
+  })
+)(NavigationComponent);
 
-Navigation.propTypes = {
+/*Navigation.propTypes = {
   pathname: PropTypes.string.isRequired,
 };
+*/

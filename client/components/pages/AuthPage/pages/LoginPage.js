@@ -15,21 +15,14 @@ class LoginPageComponent extends Component {
     login = async (event) => {
         event.preventDefault();
 
-        const {
-            email,
-            password,
-        } = this.state;
-        
-        const user = {
-            email,
-            password,
-        };
-        console.warn(this.props.attemptLogin);
+        const { email, password } = this.state;
+
+        const user = { email,password };
 
         await this.props.attemptLogin(user);
         return;
     };
-    
+
     render() {
         const {
             isActive
@@ -39,22 +32,32 @@ class LoginPageComponent extends Component {
         }
         return (
             <>
-            <form onSubmit={this.login}>
-                <div className="AuthPage">
-                    <Header title="Sign In" />
-                    <input type="email" onChange={this.handleChange('email')} placeholder="Email" className="inputField" />
-                    <input type="password" onChange={this.handleChange('password')} placeholder="Password" className="inputField" />
-                    <button >Sign In</button>
-                </div>
-                <br />
-                <Link className="hyperlink" to="/auth/register">Create Account</Link>
-                <br />
-                <Link className="hyperlink" to="/auth/forgot">Forgot Password</Link>
+                <form onSubmit={this.login}>
+                    <div className="AuthPage">
+                        <Header title="Sign In" />
+                        <input
+                            type="email"
+                            onChange={this.handleChange('email')}
+                            placeholder="Email"
+                            className="inputField" />
+                        <input
+                            type="password"
+                            onChange={this.handleChange('password')}
+                            placeholder="Password"
+                            className="inputField" />
+                        <button >Sign In</button>
+                    </div>
+                    <br />
+                    <Link className="hyperlink" to="/auth/register">Create Account</Link>
+                    <br />
+                    <Link className="hyperlink" to="/auth/forgot">Forgot Password</Link>
                 </form>
                 <div className="backgroundImage" />
             </>
         )
     }
-} export const LoginPage = connect(() => ({}), dispatch => ({
+}
+
+export const LoginPage = connect(() => ({}), dispatch => ({
     attemptLogin: (user) => dispatch(attemptLogin(user))
 }))(LoginPageComponent);

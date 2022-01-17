@@ -9,6 +9,8 @@ module.exports = router;
 router.post('/register', (req, res) => {
   if (!req || !req.body || !req.body.name || !req.body.password || !req.body.email) {
     res.status(400).send({ message: 'All fields are required' });
+  }if ( req.body.password.length < 6){
+    res.status(400).send({ message: 'Password must be at least 6 characters' });
   }
 
   req.body.email = req.body.email.toLowerCase();
@@ -76,10 +78,9 @@ router.post('/forgot', (req, res) => {
   req.body.email = req.body.email.toLowerCase();
   console.log(req.body);
   const email = req.body.email;
-  //res.json({ error: "Unauthorized" });
   User.findOne({ email }, (err, user) => {
     if (err) {
-      res.status(200).send({ message: ' 1 If this email exists, check your email for a link', err });
+      res.status(200).send({ message: 'If this email exists, check your email for a link', err });
       return;
     }
     if (user) {
@@ -88,13 +89,12 @@ router.post('/forgot', (req, res) => {
       newRecovery.save((err, savedRecovery) => {
         if (err) {
           console.log(err)
-          res.status(200).send({ message: ' 2 If this email exists, check your email for a link', err });
+          res.status(200).send({ message: 'If this email exists, check your email for a link', err });
         } else {
           sendRecoveryEmail(savedRecovery._id, email, req.protocol);
-          res.status(200).send({ message: ' 3 If this email exists, check your email for a link', err });
+          res.status(200).send({ message: 'If this email exists, check your email for a link', err });
         }
       });
-      //User Found sending Email
     }
   }
   );
@@ -104,7 +104,6 @@ function sendRecoveryEmail(id, email, protocol) {
   var SibApiV3Sdk = require('sib-api-v3-sdk');
   var defaultClient = SibApiV3Sdk.ApiClient.instance;
 
-  // Configure API key authorization: api-key
   var apiKey = defaultClient.authentications['api-key'];
   apiKey.apiKey = process.env.MAIL_API_KEY;
   var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();

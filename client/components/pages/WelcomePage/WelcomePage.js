@@ -1,9 +1,25 @@
-import React from 'react';
+import { push } from 'connected-react-router';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import R from 'ramda';
 
-export default class WelcomePage extends React.Component {
+class WelcomePageComponent extends Component {
+
+  componentDidUpdate(prevProps, nextProps) {
+    if (R.isEmpty(nextProps?.user ?? {})) {
+      nextProps?.pushRoute?.('auth/login');
+    }
+  }
 
   render() {
+
+    const {
+      user
+    } = this.props
+
+    const auth = !R.isEmpty(user)
+
     return (
       <div className="homePage body">
         <div className="wrapContainer">
@@ -26,7 +42,7 @@ export default class WelcomePage extends React.Component {
                   SCAN
                 </div>
               </Link>
-              <Link to="auth/login">
+              <Link to={auth ? "/dashboard" : "/auth/login"}>
                 <div className="homeNavBtn">
                   MANAGE
                 </div>
@@ -39,3 +55,13 @@ export default class WelcomePage extends React.Component {
     );
   }
 }
+
+const mapStateToProps = ({ user }) => ({
+  user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  pushRoute: (route) => dispatch(push(route))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(WelcomePageComponent);

@@ -12,15 +12,9 @@ class ForgotPageComponent extends Component {
     forgot = async (event) => {
         event.preventDefault();
 
-        const {
-            email,
-        } = this.state;
-        
-        const user = {
-            email,
-        };
-        console.warn(this.props.attemptForgot);
+        const { email } = this.state;
 
+        const user = { email };
         await this.props.attemptForgot(user);
         return;
     };
@@ -35,7 +29,11 @@ class ForgotPageComponent extends Component {
             <>
                 <form onSubmit={this.forgot}>
                     <Header title="Forgot Password" />
-                    <input onChange={this.handleChange('email')} type="email" placeholder="Email" className="inputField" required />
+                    <input
+                        onChange={this.handleChange('email')}
+                        type="email" placeholder="Email"
+                        className="inputField"
+                        required />
                     <button type="submit">Submit</button>
                 </form>
                 <div className="backgroundImage" />
@@ -43,6 +41,7 @@ class ForgotPageComponent extends Component {
         )
     }
 }
+
 export const ForgotPage = connect(() => ({}), dispatch => ({
     attemptForgot: (user) => dispatch(attemptForgot(user))
 }))(ForgotPageComponent);
