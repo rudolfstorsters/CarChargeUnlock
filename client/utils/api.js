@@ -16,13 +16,13 @@ export const handleError = error => {
 
 export const dispatchError = dispatch => res => {
   if (res.status === 401) {
-    dispatch(logout());
-    dispatch(push('/login'));
+    // dispatch(logout());
+    // dispatch(push('/login'));
   }
 
   RNC.addNotification({
     title: `Error: ${res.status}`,
-    message: res.body.message,
+    message: res?.body?.message ?? "",
     type: 'danger',
     container: 'top-right',
     animationIn: ['animated', 'fadeInRight'],
