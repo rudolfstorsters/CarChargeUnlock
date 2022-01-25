@@ -1,0 +1,96 @@
+.dashboardPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #e2e2e2;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 67px;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .unlockStyle{
+    font-size: 16px;
+  }
+
+  .innerCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    justify-content: space-between;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: $primary-color;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04aa6d;
+    cursor: pointer;
+  }
+
+  p {
+    user-select: none;
+    margin-bottom: 8px;
+  }
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+  }
+  .homeNavBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s;
+    width: 90%;
+    max-width: 230px;
+    height: 56px;
+    border-radius: 10px;
+    font-size: 18px;
+    border-radius: 56px;
+    font-weight: 700;
+    background: $white;
+    justify-content: center;
+    vertical-align: middle;
+    color: $primary-color;
+    text-align: center;
+    outline: none;
+    border: 1.5px solid $primary-color;
+    border-radius: 62px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    user-select: none;
+    margin: 8px auto;
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      background: $primary-color;
+      color: $white;
+    }
+  }
+  @media (max-width: 750px) {
+    .innerCardContainer {
+      justify-content: center;
+    }
+}
+}

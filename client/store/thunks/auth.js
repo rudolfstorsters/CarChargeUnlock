@@ -101,5 +101,6 @@ export const attemptLogout = () => dispatch =>
           duration: 5000,
         },
       });
+      dispatch(push('/auth/login'));
       return data;
     }).catch(dispatchError(dispatch));

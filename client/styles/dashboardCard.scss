@@ -1,0 +1,80 @@
+.dashboardCard {
+  display: flex;
+  justify-content: center;
+
+  .card {
+    flex: 0 0 auto;
+    margin: 20px;
+    bottom: 20px;
+    border-radius: 10px;
+    padding-bottom: 15px;
+
+    h2 {
+      background: $primary-color;
+      font-weight: 900;
+      font-size: 24px;
+      padding: 16px 16px;
+      color: white;
+      user-select: none;
+      border-radius: 10px 10px 0px 0px;
+    }
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .swiperContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+    user-select: none;
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    user-select: none;
+    padding: 0px 20px;
+  }
+
+  .homeNavBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s;
+    width: 90%;
+    max-width: 230px;
+    height: 56px;
+    border-radius: 10px;
+    font-size: 18px;
+    border-radius: 56px;
+    font-weight: 700;
+    background: $white;
+    justify-content: center;
+    vertical-align: middle;
+    color: $primary-color;
+    text-align: center;
+    outline: none;
+    border: 1.5px solid $primary-color;
+    border-radius: 62px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    user-select: none;
+    margin: 8px auto;
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      background: $primary-color;
+      color: $white;
+    }
+  }
+}
