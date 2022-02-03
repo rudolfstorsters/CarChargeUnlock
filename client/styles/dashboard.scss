@@ -27,7 +27,9 @@
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-content: stretch;
+    max-width: 900px;
   }
 
   .slider::-webkit-slider-thumb {
@@ -51,10 +53,30 @@
     user-select: none;
     margin-bottom: 8px;
   }
+
   .cardContainer {
     display: flex;
     flex-wrap: wrap;
     margin: 10px auto;
+    justify-content: center;
+  }
+
+  .textConainer {
+    min-width: 320px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 11px 0px;
+    position: relative;
+  }
+
+  .homeTitle {
+    display: block;
+    line-height: 33.5px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    padding: 11px 0px;
+    font-size: 35px;
   }
   .homeNavBtn {
     display: flex;
@@ -88,7 +110,13 @@
       color: $white;
     }
   }
-  @media (max-width: 750px) {
+
+  hr{
+    margin: 0px auto;
+    width: 115px;
+    justify-self: center;
+  }
+  @media (max-width: 959px) {
     .innerCardContainer {
       justify-content: center;
     }

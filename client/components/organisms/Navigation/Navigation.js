@@ -9,30 +9,6 @@ import Logo from './home-image.png';
 
 class NavigationComponent extends React.Component {
 
-  /*export default function Navigation({ pathname }) {
-    const { user } = useSelector(R.pick(['user']));
-    const [auth, setAuth] = useState(!R.isEmpty(user));
-
-
-    useEffect(() => {
-    setAuth(!R.isEmpty(user));
-  }, [user.username]);
-
-  componentDidUpdate(prevProps, nextProps) {
-    
-    const {
-      pushRoute,
-      user,
-    } = nextProps;
-    
-    if (R.isEmpty(user)) {
-      pushRoute("/login");
-    }
-  }
-  */
-
-
-
   render() {
 
     const {
@@ -45,9 +21,14 @@ class NavigationComponent extends React.Component {
       <>
         <div className="navBar">
           {auth ?
-            <Link to={"/dashboard"}>
-              <img src={Logo} alt="Logo" />
-            </Link>
+            <div className='scanButton'>
+              <Link to={"/dashboard"}>
+                <img src={Logo} alt="Logo" />
+              </Link>
+              <Link className="authButton buttonMargin" to={"/scan"}>
+               SCAN
+              </Link>
+            </div>
             :
             <Link to={"/"}>
               <img src={Logo} alt="Logo" />
@@ -73,8 +54,3 @@ export default connect(
     pushRoute: (route) => dispatch(push(route)),
   })
 )(NavigationComponent);
-
-/*Navigation.propTypes = {
-  pathname: PropTypes.string.isRequired,
-};
-*/

@@ -28,6 +28,4 @@ class RangeSlider extends Component {
     }
 }
 
-
-
 export default RangeSlider;

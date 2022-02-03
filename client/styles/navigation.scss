@@ -43,6 +43,16 @@
     color: $white;
   }
 
+  .scanButton{
+    display: flex;
+    flex-direction: row;
+   justify-items: space-between;
+  }
+
+  .buttonMargin{
+    margin-left: 15px;
+  }
+
   .navMenu { 
     display: flex;
     align-items: center;
