@@ -14,15 +14,14 @@ class AddCarPage extends Component {
     }
     render() {
         const type = this.props?.match?.params?.type;
-
-        const { user } = this.props;
         const auth = !R.isEmpty(user)
-
+        const { user } = this.props;
+        
         return (
             <div className="dashboardPage">
                 {console.log(type)}
                 <h1 className="homeTitle">Choose authentication method: </h1>
-                <Link to="/add/tesla">
+                <Link to= {auth ? "/add/tesla" : "/auth/login"}>
                     <div className="homeNavBtn">Tesla Account</div>
                 </Link>
                 <hr ></hr>

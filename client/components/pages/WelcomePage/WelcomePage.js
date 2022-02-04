@@ -8,9 +8,7 @@ class WelcomePageComponent extends Component {
 
   render() {
     
-    const {
-      user
-    } = this.props
+    const { user } = this.props
     const auth = !R.isEmpty(user)
     return (
       <div className="homePage body">
