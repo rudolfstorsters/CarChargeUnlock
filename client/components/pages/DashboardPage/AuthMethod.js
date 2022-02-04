@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import Header from "../../common/header";
 
-export const TESLAACCOUNT = 'tesla';
-export const APIKEY = 'api';
+export const TESLA_ACCOUNT = 'tesla';
+export const API_KEY = 'api';
 
 class AuthMethod extends Component {
 
@@ -12,7 +12,7 @@ class AuthMethod extends Component {
 
         return (
             <div className="dashboardPage">
-                {type == TESLAACCOUNT ?
+                {type == TESLA_ACCOUNT ?
                     <div className="AuthPage">
 
                         <Header title="Sign In Tesla Account" />

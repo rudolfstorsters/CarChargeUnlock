@@ -15,9 +15,7 @@ class AddCarPage extends Component {
     render() {
         const type = this.props?.match?.params?.type;
 
-        const {
-            user,
-        } = this.props;
+        const { user } = this.props;
         const auth = !R.isEmpty(user)
 
         return (

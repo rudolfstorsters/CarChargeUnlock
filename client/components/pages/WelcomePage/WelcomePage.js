@@ -12,7 +12,6 @@ class WelcomePageComponent extends Component {
       user
     } = this.props
     const auth = !R.isEmpty(user)
-
     return (
       <div className="homePage body">
         <div className="wrapContainer">

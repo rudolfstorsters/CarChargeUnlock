@@ -83,6 +83,6 @@ const mapStateToProps = ({ user }) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   pushRoute: (route) => dispatch(push(route))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardPageComponent);
