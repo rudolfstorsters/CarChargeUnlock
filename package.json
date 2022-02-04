@@ -45,8 +45,7 @@
   ],
   "homepage": "https://github.com/djizco/mern-boilerplate#readme",
   "engines": {
-    "yarn": "1.x",
-    "node": "16.13.1"
+    "yarn": "1.x"
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
