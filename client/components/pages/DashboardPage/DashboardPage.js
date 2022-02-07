@@ -42,16 +42,6 @@ class DashboardPageComponent extends React.Component {
         allowCharge: false,
         rangeVal: 70,
       },
-      {
-        name: "Arnolds4",
-        allowCharge: true,
-        rangeVal: 100,
-      },
-      {
-        name: "Arnolds4",
-        allowCharge: true,
-        rangeVal: 100,
-      },
     ];
 
     return (
