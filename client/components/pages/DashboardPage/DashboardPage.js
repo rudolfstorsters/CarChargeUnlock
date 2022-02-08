@@ -33,11 +33,6 @@ class DashboardPageComponent extends React.Component {
         rangeVal: 20,
       },
       {
-        name: "Arnolds",
-        allowCharge: false,
-        rangeVal: 20,
-      },
-      {
         name: "Arnolds2",
         allowCharge: true,
         rangeVal: 50,
@@ -50,7 +45,7 @@ class DashboardPageComponent extends React.Component {
       {
         name: "Arnolds3",
         allowCharge: true,
-        rangeVal: 90,
+        rangeVal: 70,
       },
     ];
 
