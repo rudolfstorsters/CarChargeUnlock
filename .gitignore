@@ -8,7 +8,7 @@ build/
 
 # NPM
 .npm
-package-lock.json
+
 
 # Environment
 .env*
