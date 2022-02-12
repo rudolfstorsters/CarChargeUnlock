@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import Header from "../../common/header";
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { push } from 'connected-react-router';
 import R from 'ramda';
 
@@ -13,9 +12,9 @@ class AuthMethod extends Component {
 
     componentDidMount() {
         if (R.isEmpty(this.props?.user ?? {})) {
-          this.props?.pushRoute?.('/auth/login');
+            this.props?.pushRoute?.('/auth/login');
         }
-      }
+    }
 
     render() {
 
@@ -28,17 +27,19 @@ class AuthMethod extends Component {
                 {type !== TESLA_ACCOUNT && type !== API_KEY && !auth ? <Redirect path={"/"} /> : null}
                 {type == TESLA_ACCOUNT ?
                     <div className="AuthPage">
-
                         <Header title="Sign In Tesla Account" />
                         <input
+                            autoComplete="off"
                             type="email"
                             placeholder="Email"
                             className="inputField" />
                         <input
+                            autoComplete="off"
                             type="password"
                             placeholder="Password"
                             className="inputField" />
                         <input
+                            autoComplete="off"
                             type="number"
                             placeholder="Two Factor Code"
                             className="inputField marginFix" />
@@ -49,6 +50,7 @@ class AuthMethod extends Component {
                     <div className="AuthPage" >
                         <Header title="Sign In With API Key" />
                         <input
+                            autoComplete="off"
                             type="text"
                             placeholder="API Key"
                             className="inputField" />

@@ -11,7 +11,7 @@ class RangeSlider extends Component {
         return (
             <div className="dashboardPage">
                 <p>
-                    Car charger can be unlocked at
+                    Car charger can be unlocked at &nbsp;
                     <span className="unlockStyle">
                         {rangeVal}%
                     </span>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Header from "../../common/header";
 
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
@@ -20,7 +21,7 @@ class AddCarPage extends Component {
         return (
             <div className="dashboardPage">
                 {console.log(type)}
-                <h1 className="homeTitle">Choose authentication method: </h1>
+                <div className="homeTitle">Choose authentication method: </div>
                 <Link to= {auth ? "/add/tesla" : "/auth/login"}>
                     <div className="homeNavBtn">Tesla Account</div>
                 </Link>

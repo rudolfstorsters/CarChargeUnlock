@@ -17,7 +17,7 @@ class LoginPageComponent extends Component {
 
         const { email, password } = this.state;
 
-        const user = { email,password };
+        const user = { email, password };
 
         await this.props.attemptLogin(user);
         return;
