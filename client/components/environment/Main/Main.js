@@ -16,6 +16,8 @@ import AuthPage from '_pages/AuthPage';
 import ResultsPage from '_pages/Results';
 import TermsPage from '_pages/TermsPage';
 import PrivacyPage from '_pages/PrivacyPage';
+import AddCar from '_pages/DashboardPage/AddCarPage'
+import AuthMethod from '_pages/DashboardPage/AuthMethod'
 
 import Navigation from '_organisms/Navigation';
 
@@ -53,6 +55,8 @@ export default function Main({ location }) {
           <Route path="/auth" component={AuthPage} />
           <Route path="/terms" component={TermsPage} />
           <Route path="/privacy" component={PrivacyPage} />
+          <Route path="/add/:type" component={AuthMethod} />
+          <Route path="/add" component={AddCar} />
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
