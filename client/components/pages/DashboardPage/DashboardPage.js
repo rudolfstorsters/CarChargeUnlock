@@ -81,16 +81,6 @@ class DashboardPageComponent extends React.Component {
             </Title>
             <div className='cardContainer'>
               <div className='innerCardContainer'>
-<<<<<<< HEAD
-               {cars.map((car, index) =>(
-                 <DashboardCardComponent key={index} {...car} />
-               ))}
-              </div>
-            </div>
-            <button className='homeNavBtn'>
-              + ADD CAR
-            </button>
-=======
                 {cars.map((car, index) => (
                   <DashboardCardComponent key={index} {...car} />
                 ))}
@@ -101,7 +91,6 @@ class DashboardPageComponent extends React.Component {
                 + ADD CAR
               </div>
             </Link>
->>>>>>> c4cc161697790cc927a52e285143527818278f41
           </Container>
         </Section>
       </div>
