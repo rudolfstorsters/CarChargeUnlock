@@ -8,8 +8,7 @@ build/
 
 # NPM
 .npm
-package-lock.json
-yarn.lock
+
 
 # Environment
 .env*
