@@ -21,34 +21,10 @@ class DashboardPageComponent extends React.Component {
 
   render() {
 
-
     const {
       user,
     } = this.props;
     const auth = !R.isEmpty(user)
-
-    const cars = [
-      {
-        name: "Arnolds",
-        allowCharge: false,
-        rangeVal: 23,
-      },
-      {
-        name: "Arnolds2",
-        allowCharge: true,
-        rangeVal: 80,
-      },
-      {
-        name: "Arnolds3",
-        allowCharge: false,
-        rangeVal: 70,
-      },
-      {
-        name: "Arnolds3",
-        allowCharge: true,
-        rangeVal: 70,
-      },
-    ];
 
     const cars = [
       {
