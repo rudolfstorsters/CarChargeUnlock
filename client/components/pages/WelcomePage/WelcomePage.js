@@ -6,20 +6,10 @@ import R from 'ramda';
 
 class WelcomePageComponent extends Component {
 
-  componentDidUpdate(prevProps, nextProps) {
-    if (R.isEmpty(nextProps?.user ?? {})) {
-      nextProps?.pushRoute?.('auth/login');
-    }
-  }
-
   render() {
-
-    const {
-      user
-    } = this.props
-
+    
+    const { user } = this.props
     const auth = !R.isEmpty(user)
-
     return (
       <div className="homePage body">
         <div className="wrapContainer">

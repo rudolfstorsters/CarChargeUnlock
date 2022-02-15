@@ -2,7 +2,7 @@ import React, { Component } from "react";
 class RangeSlider extends Component {
 
     handleChange = (range) => {
-       this.props.onRange?.(range);
+        this.props.onRange?.(range);
     }
     render() {
 
@@ -10,7 +10,8 @@ class RangeSlider extends Component {
 
         return (
             <div className="dashboardPage">
-                <p>Car charger can be unlocked at
+                <p>
+                    Car charger can be unlocked at &nbsp;
                     <span className="unlockStyle">
                         {rangeVal}%
                     </span>
@@ -27,7 +28,5 @@ class RangeSlider extends Component {
         );
     }
 }
-
-
 
 export default RangeSlider;
