@@ -1,12 +1,10 @@
 import React from 'react';
 import ChangeUsername from '_organisms/ChangeUsername';
 
-export default function ProfileSettings() {
-  return (
-    <div className="profile-settings">
+export default function ChangeEmail() {
+    return (
       <div className="account-settings">
         <ChangeUsername />
       </div>
-    </div>
-  );
-}
+    );
+  }

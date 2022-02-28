@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 
+import { Link } from 'react-router-dom';
+import R from 'ramda';
+
 import Section from 'react-bulma-companion/lib/Section';
 import Container from 'react-bulma-companion/lib/Container';
 import Title from 'react-bulma-companion/lib/Title';
@@ -10,12 +13,18 @@ import DashboardCardComponent from '../../common/dashboardCard';
 
 class DashboardPageComponent extends React.Component {
 
-  render() {
+  componentDidMount() {
+    if (R.isEmpty(this.props?.user ?? {})) {
+      this.props?.pushRoute?.('/auth/login');
+    }
+  }
 
+  render() {
 
     const {
       user,
     } = this.props;
+    const auth = !R.isEmpty(user)
 
     const cars = [
       {
@@ -45,18 +54,19 @@ class DashboardPageComponent extends React.Component {
         <Section>
           <Container>
             <Title size="1">
-              Welcome {user.name}!
             </Title>
             <div className='cardContainer'>
               <div className='innerCardContainer'>
-               {cars.map((car, index) =>(
-                 <DashboardCardComponent key={index} {...car} />
-               ))}
+                {cars.map((car, index) => (
+                  <DashboardCardComponent key={index} {...car} />
+                ))}
               </div>
             </div>
-            <button className='homeNavBtn'>
-              + ADD CAR
-            </button>
+            <Link to={auth ? "/add" : "../auth/login"}>
+              <div className="homeNavBtn">
+                + ADD CAR
+              </div>
+            </Link>
           </Container>
         </Section>
       </div>
@@ -68,6 +78,6 @@ const mapStateToProps = ({ user }) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   pushRoute: (route) => dispatch(push(route))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardPageComponent);

@@ -3,7 +3,6 @@ import Switch from "react-switch";
 
 class SwitchComponent extends Component {
    
-
     handleChange = (checked) => {
         this.props.onChange?.(checked);
     }

@@ -1,14 +1,17 @@
 .settings-menu {
   a.is-active {
-    background-color: $mern-primary;
+    background-color: $primary-color;
+    border-radius: 62px;
   }
 
   a.is-active:hover {
     color: $white;
+
   }
 
   a:hover {
     color: $dark-grey;
+    border-radius: 62px;
   }
 }
 

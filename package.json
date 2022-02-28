@@ -45,7 +45,8 @@
   ],
   "homepage": "https://github.com/djizco/mern-boilerplate#readme",
   "engines": {
-    "yarn": "1.x"
+    "yarn": "1.x",
+    "node": "16.13.1"
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
@@ -87,10 +88,10 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "prop-types": "^15.7.2",
-    "ramda": "^0.27.1",
-    "react": "^17.0.2",
+    "ramda": "^0.28.0",
+    "react": "^16.14.0",
     "react-bulma-companion": "0.3.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^16.14.0",
     "react-notifications-component": "3.1.0",
     "react-qr-reader": "^2.2.1",
     "react-redux": "^7.2.5",

@@ -9,7 +9,6 @@ build/
 # NPM
 .npm
 
-
 # Environment
 .env*
 

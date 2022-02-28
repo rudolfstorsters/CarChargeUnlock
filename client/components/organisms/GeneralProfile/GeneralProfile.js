@@ -96,96 +96,42 @@ export default function GeneralProfile() {
   const edited = firstNameEdited || lastNameEdited || bioEdited || profilePicEdited;
 
   return (
-    <Box className="general-profile">
-      <Icon size="medium" className="is-pulled-right" onClick={refresh} onKeyPress={refresh}>
-        <FontAwesomeIcon icon={faSync} size="lg" />
-      </Icon>
+    <div className="FormField">
       <Title size="3">
         General
       </Title>
-      <hr className="separator" />
-      <Columns>
-        <Column size="4">
-          <Title size="3" className="has-text-centered">
-            {user.usernameCase}
-          </Title>
-          <Image>
-            <Image.Content
-              className="profile-img"
-              src={profilePic || '/images/default-profile.png'}
-              alt="Profile"
-            />
-          </Image>
-          <Field>
-            <Label htmlFor="profile-pic-url">
-              Picture URL
-            </Label>
-            <Control>
-              <Input
-                id="profile-pic-url"
-                placeholder="Picture URL"
-                value={profilePic}
-                onChange={updateProfilePic}
-              />
-            </Control>
-          </Field>
-        </Column>
-        <Column size="8">
-          <Columns>
-            <Column size="6">
-              <Field>
-                <Label htmlFor="first-name" className="Label">
-                  First Name
-                </Label>
-                <Control>
-                  <Input
-                    id="first-name"
-                    placeholder="First Name"
-                    value={firstName}
-                    onChange={updateFirstName}
-                  />
-                </Control>
-              </Field>
-            </Column>
-            <Column size="6">
-              <Field>
-                <Label htmlFor="last-name">
-                  Last Name
-                </Label>
-                <Control>
-                  <Input
-                    id="last-name"
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={updateLastName}
-                  />
-                </Control>
-              </Field>
-            </Column>
-          </Columns>
-          <Field>
-            <Label htmlFor="bio">
-              Bio
-            </Label>
-            <Control>
-              <Textarea
-                id="bio"
-                placeholder="Tell us about yourself."
-                value={bio}
-                maxLength={240}
-                onChange={updateBio}
-              />
-            </Control>
-            <Help>
-              {`Characters remaining: ${charactersRemaining}`}
-            </Help>
-          </Field>
-        </Column>
-      </Columns>
-      <hr className="separator" />
-      <Button color="success" onClick={save} disabled={!edited}>
+      <Title size="3" className="has-text-centered">
+        {user.usernameCase}
+      </Title>
+      <Label htmlFor="first-name" className="lable">
+        First Name
+      </Label>
+      <Control>
+        <Input
+          className="inputField"
+          id="first-name"
+          placeholder="First Name"
+          value={firstName}
+          onChange={updateFirstName}
+        />
+      </Control>
+      <Field>
+        <Label htmlFor="last-name" className="lable" >
+          Last Name
+        </Label>
+        <Control>
+          <Input
+            className="inputField"
+            id="last-name"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={updateLastName}
+          />
+        </Control>
+      </Field>
+      <button onClick={save} disabled={!edited}>
         Save
-      </Button>
-    </Box>
+      </button>
+    </div>
   );
 }

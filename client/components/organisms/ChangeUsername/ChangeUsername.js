@@ -47,28 +47,26 @@ export default function ChangeUsername() {
   const helpMessage = disabled ? `Username case must match: ${user.username}` : 'Username case valid.';
 
   return (
-    <Box className="change-username">
+    <div className="FormField">
       <Title size="3">
-        Username
+        Email
       </Title>
-      <hr className="separator" />
       <Field>
         <Label htmlFor="username">
-          Current Username
+          Current Email
         </Label>
         <Control className="control">
           {user.usernameCase}
         </Control>
       </Field>
-      <Field className="has-help">
-        <Label htmlFor="username-case">
-          Username Case
-        </Label>
+      <Field >
+        <Label htmlFor="username-case"/>
         <Control iconsRight>
           <Input
+          className="inputField"
             id="username-case"
             color={disabled ? (usernameCase !== user.usernameCase ? 'danger' : undefined) : 'success'}
-            placeholder="Username Case"
+            placeholder="New Email"
             value={usernameCase}
             onChange={updateUsernameCase}
           />
@@ -90,14 +88,13 @@ export default function ChangeUsername() {
           </Help>
         )}
       </Field>
-      <hr className="separator" />
-      <Button
+      <button
         color="success"
         disabled={disabled}
         onClick={saveUsernameCase}
       >
         Save
-      </Button>
-    </Box>
+      </button>
+    </div>
   );
 }
