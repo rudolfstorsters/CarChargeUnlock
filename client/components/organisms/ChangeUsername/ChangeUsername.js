@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
 
-import Box from 'react-bulma-companion/lib/Box';
 import Title from 'react-bulma-companion/lib/Title';
 import Field from 'react-bulma-companion/lib/Field';
 import Control from 'react-bulma-companion/lib/Control';
@@ -22,25 +21,25 @@ export default function ChangeUsername() {
   const dispatch = useDispatch();
   const { user } = useSelector(R.pick(['user']));
 
-  const [usernameCase, setUsernameCase] = useState(user.usernameCase);
+  const [email, setEmail] = useState(user.email);
 
   useEffect(() => {
     if (!R.isEmpty(user)) {
-      setUsernameCase(user.usernameCase);
+      setEmail(user.email);
     }
   }, [user.username]);
 
-  const updateUsernameCase = e => setUsernameCase(e.target.value);
+  const updateEmail = e => setEmail(e.target.value);
 
-  const disabled = (user.usernameCase === usernameCase)
-    || usernameCase.toLowerCase() !== user.username;
+  const disabled = (user.email === email)
+    || email.toLowerCase() !== user.username;
 
-  const saveUsernameCase = () => {
-    if (usernameCase.toLowerCase() === user.username) {
-      const updatedUser = { username_case: usernameCase };
+  const saveEmail = () => {
+    if (email.toLowerCase() === user.username) {
+      const updatedUser = { username_case: email };
 
       dispatch(attemptUpdateUser(updatedUser))
-        .catch(() => setUsernameCase(user.usernameCase));
+        .catch(() => setEmail(user.email));
     }
   };
 
@@ -56,7 +55,7 @@ export default function ChangeUsername() {
           Current Email
         </Label>
         <Control className="control">
-          {user.usernameCase}
+          {user.email}
         </Control>
       </Field>
       <Field >
@@ -65,24 +64,24 @@ export default function ChangeUsername() {
           <Input
           className="inputField"
             id="username-case"
-            color={disabled ? (usernameCase !== user.usernameCase ? 'danger' : undefined) : 'success'}
+            color={disabled ? (email !== user.email ? 'danger' : undefined) : 'success'}
             placeholder="New Email"
-            value={usernameCase}
-            onChange={updateUsernameCase}
+            value={email}
+            onChange={updateEmail}
           />
-          {disabled && (usernameCase !== user.usernameCase) && (
+          {disabled && (email !== user.email) && (
             <Icon
               size="small"
               align="right"
-              color={disabled ? (usernameCase !== user.usernameCase ? 'danger' : undefined) : 'success'}
+              color={disabled ? (email !== user.email ? 'danger' : undefined) : 'success'}
             >
               <FontAwesomeIcon
-                icon={disabled ? (usernameCase !== user.usernameCase && faExclamationTriangle) : faCheck}
+                icon={disabled ? (email !== user.email && faExclamationTriangle) : faCheck}
               />
             </Icon>
           )}
         </Control>
-        {usernameCase !== user.usernameCase && (
+        {email !== user.email && (
           <Help color={disabled ? 'danger' : 'success'}>
             {helpMessage}
           </Help>
@@ -91,7 +90,7 @@ export default function ChangeUsername() {
       <button
         color="success"
         disabled={disabled}
-        onClick={saveUsernameCase}
+        onClick={saveEmail}
       >
         Save
       </button>
