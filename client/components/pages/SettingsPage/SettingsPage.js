@@ -13,6 +13,8 @@ import Column from 'react-bulma-companion/lib/Column';
 import ProfileSettings from '_templates/ProfileSettings';
 import AccountSettings from '_templates/AccountSettings';
 import SettingsMenu from '_organisms/SettingsMenu';
+import ChangeEmail from '_templates/AccountSettings/ChangeEmail'
+import ChangePassword from '_templates/AccountSettings/ChangePassword'
 
 export default function SettingsPage({ location }) {
   const dispatch = useDispatch();
@@ -36,6 +38,8 @@ export default function SettingsPage({ location }) {
               <Switch>
                 <Route path="/settings/profile/" component={ProfileSettings} />
                 <Route path="/settings/account/" component={AccountSettings} />
+                <Route path="/settings/change-password" component={ChangePassword} />
+                <Route path="/settings/change-email" component={ChangeEmail} />
                 <Route path="*" component={ProfileSettings} />
               </Switch>
             </Column>

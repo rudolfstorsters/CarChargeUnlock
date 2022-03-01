@@ -62,17 +62,15 @@ export default function ChangePassword() {
   };
 
   return (
-    <Box className="change-password">
+    <div className="FormField">
       <Title size="3">
         Change Password
       </Title>
-      <hr className="separator" />
       <Field>
-        <Label htmlFor="old-password">
-          Old Password
-        </Label>
+        <Label htmlFor="old-password" />
         <Control>
           <Input
+            className="inputField"
             id="old-password"
             type="password"
             placeholder="Old Password"
@@ -82,16 +80,16 @@ export default function ChangePassword() {
         </Control>
       </Field>
       <Block>
-        <Link to="/recovery">
+        <Link
+          to="/auth/forgot"
+          className='hyperlink'>
           Forgot your password?
         </Link>
       </Block>
-      <Field className="has-help">
-        <Label htmlFor="new-password">
-          New Password
-        </Label>
+        <Label htmlFor="new-password" />
         <Control iconsRight>
           <Input
+            className="inputField"
             id="new-password"
             color={newPassword ? (valid ? 'success' : 'danger') : undefined}
             type="password"
@@ -110,13 +108,11 @@ export default function ChangePassword() {
             {message}
           </Help>
         )}
-      </Field>
       <Field className="has-help">
-        <Label htmlFor="confirm-password">
-          Confirm Password
-        </Label>
+        <Label htmlFor="confirm-password" />
         <Control iconsRight>
           <Input
+            className="inputField"
             id="confirm-password"
             color={confirmPassword ? (match ? 'success' : 'danger') : undefined}
             type="password"
@@ -136,14 +132,14 @@ export default function ChangePassword() {
           </Help>
         )}
       </Field>
-      <hr className="separator" />
-      <Button
+      <button
         color="success"
         onClick={save}
+        className="button"
         disabled={!match || !valid || !oldPassword}
       >
         Update Password
-      </Button>
-    </Box>
+      </button>
+    </div>
   );
 }

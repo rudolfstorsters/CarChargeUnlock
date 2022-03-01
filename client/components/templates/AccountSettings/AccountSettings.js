@@ -1,12 +1,10 @@
 import React from 'react';
-import ChangeUsername from '_organisms/ChangeUsername';
-import ChangePassword from '_organisms/ChangePassword';
+import GeneralProfile from '../../organisms/GeneralProfile/GeneralProfile';
 
 export default function Account() {
   return (
     <div className="account-settings">
-      <ChangeUsername />
-      <ChangePassword />
+      <GeneralProfile />
     </div>
   );
 }

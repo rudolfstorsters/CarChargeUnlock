@@ -19,22 +19,9 @@ export default function SettingsMenu({ pathname }) {
   return (
     <Box>
       <Menu className="settings-menu">
-        <Menu.Label>
-          Personal
-        </Menu.Label>
-        <Menu.List>
-          <Menu.ListItem>
-            <Menu.Link
-              to="/settings/profile"
-              active={pathname.includes('profile') || pathname === '/settings' || pathname === '/settings/'}
-              component={Link}
-            >
-              Profile
-            </Menu.Link>
-          </Menu.ListItem>
-        </Menu.List>
-        <Menu.Label>
-          Settings
+        
+      <Menu.Label>
+         Account
         </Menu.Label>
         <Menu.List>
           <Menu.ListItem>
@@ -43,7 +30,30 @@ export default function SettingsMenu({ pathname }) {
               active={pathname.includes('account')}
               component={Link}
             >
-              Account
+            General
+            </Menu.Link>
+          </Menu.ListItem>
+      
+        <Menu.Label>
+          Settings
+        </Menu.Label>
+       
+          <Menu.ListItem>
+            <Menu.Link
+              to="/settings/change-email"
+              active={pathname.includes('change-email')}
+              component={Link}
+            >
+             Change Email
+            </Menu.Link>
+          </Menu.ListItem>
+          <Menu.ListItem>
+            <Menu.Link
+              to="/settings/change-password"
+              active={pathname.includes('change-password')}
+              component={Link}
+            >
+             Change Password
             </Menu.Link>
           </Menu.ListItem>
           <Menu.ListItem>

@@ -30,7 +30,7 @@ class DashboardPageComponent extends React.Component {
       {
           name: "Arnolds",
           allowCharge: false,
-          rangeVal: 20,
+          rangeVal: 21,
       },
       {
         name: "Arnolds2",
